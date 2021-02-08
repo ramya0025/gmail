@@ -1,0 +1,31 @@
+package gmail;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class GmailLogin {
+
+	
+	public static void main(String [] args) throws InterruptedException
+	{
+		System.setProperty("webdriver.chrome.driver", "C:/Users/Shyam/eclipse-workspace/GmailFunctionality/driver/chromedriver.exe");
+		WebDriver d = new ChromeDriver();
+		
+		d.get("https://mail.google.com/");
+		d.manage().window().maximize();
+		d.findElement(By.xpath("//input[@type='email']")).sendKeys("infoniks15@gmail.com");
+		Thread.sleep(2000);
+		d.findElement(By.xpath("//div[@class='VfPpkd-RLmnJb']")).click();
+		//d.findElement(By.xpath("//button[@type='button']/*[text()='Next']")).click();
+		d.findElement(By.xpath("//input[@type='password']")).sendKeys("N!kh!l12345");
+		Thread.sleep(2000);
+		d.findElement(By.xpath("//button[@type='button']/*[text()='Next']")).click();
+		Thread.sleep(2000);
+		d.findElement(By.xpath("//div[text()='Compose']")).click();
+		d.findElement(By.xpath("//*[@id=':j8']")).sendKeys("rch.0025@gmailcom");
+		d.findElement(By.xpath("//*[@id=':iq']")).sendKeys("TESTING");
+		
+	}
+	
+}
